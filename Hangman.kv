@@ -1,0 +1,254 @@
+#:kivy 1.10.0
+
+<HangmanGame>:
+    canvas.before:
+
+        Color:
+            rgb: (0.5, 0, 0.70)
+
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+    Button:
+        id: A
+        text: 'A'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:                                                           
+        id: B                                                         
+        text: 'B'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: C
+        text: 'C'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: D
+        text: 'D'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: E
+        text: 'E'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: F
+        text: 'F'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button: 
+        id: G
+        text: 'G'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: H
+        text: 'H'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: I
+        text: 'I'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10                                        
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: J
+        text: 'J'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: K
+        text: 'K'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: L
+        text: 'L'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: M
+        text: 'M'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10                                        
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: N
+        text: 'N'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: O
+        text: 'O'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: P
+        text: 'P'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: Q
+        text: 'Q'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10                                        
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: R
+        text: 'R'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: S
+        text: 'S'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: T
+        text: 'T'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: U
+        text: 'U'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: V
+        text: 'V'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: W
+        text: 'W'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: X
+        text: 'X'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: Y
+        text: 'Y'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+    Button:
+        id: Z
+        text: 'Z'
+        center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
+        center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
+        height: root.height/10
+        width: root.width/13
+        on_press: root.check_in_word(self)
+
+
+
+
+
+
+
+
+
