@@ -1,13 +1,27 @@
 from kivy.app import App
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.widget import Widget
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, ListProperty, NumericProperty
 import random
+from kivy.animation import Animation
 
 
+class Stand(Widget):
+    pass
+
+class Head(Widget):
+    def head_to_stand(self):
+        Animation.cancel_all(self)
+
+        anim = Animation(x=50, y=50,
+                         duration=4,
+                         t='out_elastic')
+        anim.start(self)
 
 class HangmanGame(Widget):
     display_word = StringProperty()
+    letter_color = ListProperty([197/255, 18/255, 48/255, 1])
+    letter_font_size = NumericProperty(50)
     wrong_guess = 0
     correct_guess = 0
     
@@ -28,6 +42,7 @@ class HangmanGame(Widget):
                     break
         return None
 
+    # check to see if the letter is in the word
     def check_in_word(self, btn):
         count = 0;
         for i, letter in enumerate(hangman_word):
@@ -35,6 +50,7 @@ class HangmanGame(Widget):
                 self.display_word = self.display_word[:i*2] + btn.text + self.display_word[i*2+1:]
                 self.correct_guess+=1
                 count += 1
+                Head().head_to_stand(self.head_graphic)
                 
                 if self.correct_guess >= len(hangman_word):
                     print('GAME OVER, YOU WIN')
@@ -45,7 +61,6 @@ class HangmanGame(Widget):
             if self.wrong_guess >= 6:
                 print('GAME OVER, YOU LOSE!')
 
-        
         btn.disabled = True # True is synonymous with 1
 
 
@@ -60,7 +75,6 @@ class HangmanApp(App):
         game = HangmanGame()
         game.init_display_word(hangman_word)
         return game
-
 
 
 if __name__ == "__main__":

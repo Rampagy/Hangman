@@ -1,17 +1,45 @@
 #:kivy 1.10.0
 
+<Stand>:
+    canvas:
+        Color:
+            rgba: 238/255, 227/255, 199/255, 1
+        Rectangle:
+            pos: [50, 100]
+            size: [150, 10]
+        Rectangle:
+            pos: [50 + 70, 100 + 10]
+            size: [10, 300]
+        Rectangle:
+            pos: [50 + 70, 100 + 310]
+            size:[150, 10]
+            
+<Head>:
+    canvas:
+        Color:
+            rgba: 238/255, 227/255, 199/255, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+            
 <HangmanGame>:
-    canvas.before:
+    canvas:
 
         Color:
             rgb: (0, 79/255, 48/255)
 
         Rectangle:
-            pos: root.pos
-            size: root.size
+            pos: self.pos
+            size: self.size
+            
+    Stand:
+    Head:
+        id: head_graphic
+        pos: [-100, -100]
+        size: [50, 50]
     
     Label:
-        id: display_word
+        id: display_word_id
         text: root.display_word
         font_size: 50
         color: 241/255, 179/255, 16/255, 1
@@ -21,8 +49,8 @@
     Button:
         id: A
         text: 'A'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -32,8 +60,8 @@
     Button:
         id: B
         text: 'B'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -43,8 +71,8 @@
     Button:
         id: C
         text: 'C'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -54,8 +82,8 @@
     Button:
         id: D
         text: 'D'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -65,8 +93,8 @@
     Button:
         id: E
         text: 'E'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -76,8 +104,8 @@
     Button:
         id: F
         text: 'F'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -87,8 +115,8 @@
     Button: 
         id: G
         text: 'G'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -98,8 +126,8 @@
     Button:
         id: H
         text: 'H'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -109,8 +137,8 @@
     Button:
         id: I
         text: 'I'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10                                        
@@ -120,8 +148,8 @@
     Button:
         id: J
         text: 'J'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -131,8 +159,8 @@
     Button:
         id: K
         text: 'K'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -142,8 +170,8 @@
     Button:
         id: L
         text: 'L'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -153,8 +181,8 @@
     Button:
         id: M
         text: 'M'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10                                        
@@ -164,8 +192,8 @@
     Button:
         id: N
         text: 'N'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -175,8 +203,8 @@
     Button:
         id: O
         text: 'O'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -186,8 +214,8 @@
     Button:
         id: P
         text: 'P'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -197,8 +225,8 @@
     Button:
         id: Q
         text: 'Q'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10                                        
@@ -208,8 +236,8 @@
     Button:
         id: R
         text: 'R'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -219,8 +247,8 @@
     Button:
         id: S
         text: 'S'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -230,8 +258,8 @@
     Button:
         id: T
         text: 'T'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -241,8 +269,8 @@
     Button:
         id: U
         text: 'U'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -252,8 +280,8 @@
     Button:
         id: V
         text: 'V'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -263,8 +291,8 @@
     Button:
         id: W
         text: 'W'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -274,8 +302,8 @@
     Button:
         id: X
         text: 'X'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -285,8 +313,8 @@
     Button:
         id: Y
         text: 'Y'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
@@ -296,8 +324,8 @@
     Button:
         id: Z
         text: 'Z'
-        font_size: 40
-        color: 197/255, 18/255, 48/255, 1
+        font_size: root.letter_font_size
+        color: root.letter_color
         center_y: root.top - (root.height/10) * (int((ord(self.text)-65)/13)+1)
         center_x: ((ord(self.text)-65)%13) * root.width/13 + (root.width/13 - self.width/2)
         height: root.height/10
